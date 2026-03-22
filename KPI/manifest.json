@@ -1,21 +1,21 @@
 {
   "name": "KipApp Harian",
   "short_name": "KipApp",
-  "description": "Aplikasi Perekaman Kinerja Harian",
-  "start_url": "./index.html",
+  "description": "Aplikasi Perekaman Kinerja Harian BPS",
+  "start_url": "/KPI/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#E62B1E",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/KPI/icon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon.png",
+      "src": "/KPI/icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
