@@ -1,9 +1,9 @@
 const CACHE_NAME = 'kipapp-pwa-v1';
 const urlsToCache = [
-  './',
-  './index.html',
-  './manifest.json',
-  './icon.png'
+  '/KPI/',
+  '/KPI/index.html',
+  '/KPI/manifest.json',
+  '/KPI/icon.png'
 ];
 
 // Install Service Worker dan simpan file ke Cache
@@ -36,16 +36,15 @@ self.addEventListener('activate', event => {
 
 // Intercept fetch request
 self.addEventListener('fetch', event => {
-  // Hanya intercept request untuk file lokal (html, json, png wrapper)
-  // Biarkan iframe Google Script memuat data langsung dari server Google
+  // Hanya intercept request untuk file lokal di repositori GitHub
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
       caches.match(event.request)
         .then(response => {
           if (response) {
-            return response; // Gunakan dari cache
+            return response; // Gunakan dari cache jika tersedia
           }
-          return fetch(event.request); // Ambil dari network
+          return fetch(event.request); // Ambil dari network jika belum di-cache
         })
     );
   }
